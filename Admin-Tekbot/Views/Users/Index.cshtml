@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Admin_Tekbot.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Review)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users_positions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users_vacations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Review)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users_positions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Users_vacations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team.TeamName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.mail }) |
+            @Html.ActionLink("Details", "Details", new { id=item.mail }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.mail })
+        </td>
+    </tr>
+}
+
+</table>
