@@ -21,6 +21,7 @@ namespace Admin_Tekbot.Models
         }
     
         public int TeamId { get; set; }
+
         public string TeamName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

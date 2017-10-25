@@ -15,6 +15,7 @@ namespace Admin_Tekbot.Models
     public partial class Case
     {
         public int CaseId { get; set; }
+
         public string Engineer_name { get; set; }
         public string Team { get; set; }
         public string Case_number { get; set; }
