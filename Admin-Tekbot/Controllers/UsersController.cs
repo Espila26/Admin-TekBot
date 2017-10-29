@@ -15,10 +15,14 @@ namespace Admin_Tekbot.Controllers
         private TestingBotDBEntities db = new TestingBotDBEntities();
 
         // GET: Users
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var users = db.Users.Include(u => u.Team);
-            return View(users.ToList());
+            //var users = db.Users.Include(u => u.Team);
+            //return View(users.ToList());
+            var Users = from e in db.Users select e;
+            if (searchString.Equals("Inactive") || searchString.Equals("Active")) {
+                Users = Users.Where(s => s.Users_Status.Contains(searchString));
+            } else if (searchString.Contains()
         }
 
         // GET: Users/Details/5
